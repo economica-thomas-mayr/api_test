@@ -6,10 +6,10 @@ my_catalogue <- sc_schema_catalogue()
 
 db_konj_id <- my_catalogue$`Publications and services`$`Economic Trend Monitor`$`Economic Trend Monitor`$id
 
-db_konj_info <- sc_schema_db(konj_id)
+db_konj_info <- sc_schema_db(db_konj_id)
 
 table_konj <- sc_table(json_file = "Konjunkturmonitor.json")
 
 df_konj <- as.data.frame(table_konj)
 
-table_konj <- sc_table(json_file = "CopyOfKonjunkturmonitor.json")
+save(df_konj, file = "df_konj.RData")
